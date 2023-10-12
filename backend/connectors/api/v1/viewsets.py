@@ -62,7 +62,7 @@ class TrelloViewSet(BaseConnectorViewSet):
 
 class TMDBViewSet(BaseConnectorViewSet):
     TOKEN = settings.NEW_CONNECTOR_TOKEN
-    BASE_URL = "https://api.themoviedb.org/3/test"
+    BASE_URL = "https://api.themoviedb.org/3/"
     AUTH_TYPE = "bearer"
     IDENTIFIER = "NEW_CONNECTOR"
     
