@@ -31,7 +31,8 @@ urlpatterns = [
     path("rest-auth/", include("dj_rest_auth.urls")),
     # Override email confirm to use allauth's HTML view instead of rest_auth's API view
     path("rest-auth/registration/account-confirm-email/<str:key>/", confirm_email),
-    path("rest-auth/registration/", include("dj_rest_auth.registration.urls")),
+    path("rest-auth/registration/", include("dj_rest_auth.registration.urls")),path("api/v1/", include("connectors.api.v1.urls"))
+
 ]
 
 admin.site.site_header = "Tst Proxy conn 2"

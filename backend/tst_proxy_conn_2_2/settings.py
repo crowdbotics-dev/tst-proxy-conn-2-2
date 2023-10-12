@@ -72,7 +72,7 @@ INSTALLED_APPS = [
 ]
 LOCAL_APPS = [
     'home',
-    'users.apps.UsersConfig',
+    'users.apps.UsersConfig',"connectors"
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
@@ -287,3 +287,4 @@ if GS_BUCKET_NAME:
     GS_DEFAULT_ACL = "publicRead"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+TRELLO_SECRET = env.str("TRELLO_SECRET", "")
