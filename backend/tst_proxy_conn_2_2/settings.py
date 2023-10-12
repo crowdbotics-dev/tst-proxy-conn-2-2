@@ -288,3 +288,4 @@ if GS_BUCKET_NAME:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 TRELLO_SECRET = env.str("TRELLO_SECRET", "")
+NEW_CONNECTOR_TOKEN = env.str("NEW_CONNECTOR_TOKEN", "")

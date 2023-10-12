@@ -59,4 +59,24 @@ class TrelloViewSet(BaseConnectorViewSet):
         payload = request.data
         data = self._api_call("/search", request_type="get", payload=payload, params=params)
         return Response(data)
+
+class TMDBViewSet(BaseConnectorViewSet):
+    TOKEN = settings.NEW_CONNECTOR_TOKEN
+    BASE_URL = "https://api.themoviedb.org/3/"
+    AUTH_TYPE = "bearer"
+    IDENTIFIER = "NEW_CONNECTOR"
+    
+    @action(detail=False, methods=["get"], url_path="search/movie")
+    def search_movie(self, request, *args, **kwargs):
+        params = request.query_params
+        payload = request.data
+        data = self._api_call("/search/movie", request_type="get", payload=payload, params=params)
+        return Response(data)
+    
+    @action(detail=False, methods=["get"], url_path="test")
+    def test(self, request, *args, **kwargs):
+        params = request.query_params
+        payload = request.data
+        data = self._api_call("/test", request_type="get", payload=payload, params=params)
+        return Response(data)
  
