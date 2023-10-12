@@ -47,6 +47,12 @@ function rest_auth_registration_resend_email_create(payload) {
 function rest_auth_registration_verify_email_create(payload) {
   return tstproxyconnAPI.post(`/rest-auth/registration/verify-email/`, payload)
 }
+function tmdb_get_test_read(payload) {
+  return tstproxyconnAPI.get(`/api/v1/connectors/tmdb/test/`)
+}
+function tmdb_get_search_movie_read(payload) {
+  return tstproxyconnAPI.get(`/api/v1/connectors/tmdb/search/movie/`)
+}
 export const apiService = {
   api_v1_login_create,
   api_v1_signup_create,
@@ -61,5 +67,7 @@ export const apiService = {
   rest_auth_password_change_create,
   rest_auth_password_reset_confirm_create,
   rest_auth_registration_resend_email_create,
-  rest_auth_registration_verify_email_create
+  rest_auth_registration_verify_email_create,
+  tmdb_get_test_read,
+  tmdb_get_search_movie_read
 }
