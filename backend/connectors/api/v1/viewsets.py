@@ -97,3 +97,12 @@ class TMDBViewSet(BaseConnectorViewSet):
             "/test", request_type="get", payload=payload, params=params
         )
         return Response(data)
+
+    @action(detail=False, methods=["get"], url_path="movie/changes")
+    def movie_changes(self, request, *args, **kwargs):
+        params = request.query_params
+        payload = request.data
+        data = self._api_call(
+            "/movie/changes", request_type="get", payload=payload, params=params
+        )
+        return Response(data)
