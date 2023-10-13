@@ -60,7 +60,7 @@ class BaseConnectorViewSet(viewsets.GenericViewSet):
 class TrelloViewSet(BaseConnectorViewSet):
     SECRET = settings.TRELLO_SECRET
     QUERY_NAME = "token"
-    BASE_URL = "https://api.trello.com/1/test/"
+    BASE_URL = "https://api.trello.com/1/"
     AUTH_TYPE = "apiKey"
     IDENTIFIER = "TRELLO"
 
