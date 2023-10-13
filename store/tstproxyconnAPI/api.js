@@ -47,6 +47,11 @@ function rest_auth_registration_resend_email_create(payload) {
 function rest_auth_registration_verify_email_create(payload) {
   return tstproxyconnAPI.post(`/rest-auth/registration/verify-email/`, payload)
 }
+function trello_get_search_read(payload) {
+  return tstproxyconnAPI.get(`/api/v1/connectors/trello/search/`, {
+    params: { quer: payload.quer }
+  })
+}
 function tmdb_get_test_read(payload) {
   return tstproxyconnAPI.get(`/api/v1/connectors/tmdb/test/`)
 }
@@ -68,6 +73,7 @@ export const apiService = {
   rest_auth_password_reset_confirm_create,
   rest_auth_registration_resend_email_create,
   rest_auth_registration_verify_email_create,
+  trello_get_search_read,
   tmdb_get_test_read,
   tmdb_get_search_movie_read
 }
