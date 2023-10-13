@@ -58,6 +58,9 @@ function tmdb_get_test_read(payload) {
 function tmdb_get_search_movie_read(payload) {
   return tstproxyconnAPI.get(`/api/v1/connectors/tmdb/search/movie/`)
 }
+function tmdb_get_movie_changes_read(payload) {
+  return tstproxyconnAPI.get(`/api/v1/connectors/tmdb/movie/changes/`)
+}
 export const apiService = {
   api_v1_login_create,
   api_v1_signup_create,
@@ -75,5 +78,6 @@ export const apiService = {
   rest_auth_registration_verify_email_create,
   trello_get_search_read,
   tmdb_get_test_read,
-  tmdb_get_search_movie_read
+  tmdb_get_search_movie_read,
+  tmdb_get_movie_changes_read
 }
