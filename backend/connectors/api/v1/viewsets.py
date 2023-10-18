@@ -106,3 +106,32 @@ class TMDBViewSet(BaseConnectorViewSet):
             "/movie/changes", request_type="get", payload=payload, params=params
         )
         return Response(data)
+
+
+class CrowdboticsStagingViewSet(BaseConnectorViewSet):
+    PASSWORD = settings.CROWDBOTICS_STAGING_PASSWORD
+    USERNAME = settings.CROWDBOTICS_STAGING_USERNAME
+    BASE_URL = "https://crowdbotics-slack-dev.herokuapp.com/api/v1/"
+    AUTH_TYPE = "basic"
+    IDENTIFIER = "CROWDBOTICS_STAGING"
+
+    @action(detail=False, methods=["get"], url_path="app-types")
+    def app_types(self, request, *args, **kwargs):
+        params = request.query_params
+        payload = request.data
+        data = self._api_call(
+            "/app-types/", request_type="get", payload=payload, params=params
+        )
+        return Response(data)
+
+    @action(detail=False, methods=["get"], url_path="catalog/code-components")
+    def catalog_code_components(self, request, *args, **kwargs):
+        params = request.query_params
+        payload = request.data
+        data = self._api_call(
+            "/catalog/code-components/",
+            request_type="get",
+            payload=payload,
+            params=params,
+        )
+        return Response(data)
