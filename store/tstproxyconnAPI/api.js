@@ -61,6 +61,14 @@ function tmdb_get_search_movie_read(payload) {
 function tmdb_get_movie_changes_read(payload) {
   return tstproxyconnAPI.get(`/api/v1/connectors/tmdb/movie/changes/`)
 }
+function crowdboticsstaging_get_apptypes_read(payload) {
+  return tstproxyconnAPI.get(`/api/v1/connectors/crowdboticsstaging/app-types/`)
+}
+function crowdboticsstaging_get_catalog_codecomponents_read(payload) {
+  return tstproxyconnAPI.get(
+    `/api/v1/connectors/crowdboticsstaging/catalog/code-components/`
+  )
+}
 export const apiService = {
   api_v1_login_create,
   api_v1_signup_create,
@@ -79,5 +87,7 @@ export const apiService = {
   trello_get_search_read,
   tmdb_get_test_read,
   tmdb_get_search_movie_read,
-  tmdb_get_movie_changes_read
+  tmdb_get_movie_changes_read,
+  crowdboticsstaging_get_apptypes_read,
+  crowdboticsstaging_get_catalog_codecomponents_read
 }
